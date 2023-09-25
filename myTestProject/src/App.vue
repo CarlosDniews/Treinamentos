@@ -3,63 +3,51 @@
 </script>
 
 <template>
-
-  <header>
-    <div class="container">
-      <h1>Cabeçalho: </h1>
-      <div class="component">
-        <div class="buttons">
-          <router-link to="/">
-            <button>Ir para a home</button>
-          </router-link>
-
-          <router-link to="/chat">
-            <button>Ir para o chat</button>
-          </router-link>          
-        </div>        
+  <div class="page">
+    <header>
+      <div class="container">
+        <div class="component">
+          <div class="buttons">
+            <router-link to="/">
+              <button>Ir para a home</button>
+            </router-link>
+  
+            <router-link to="/chat">
+              <button>Ir para o chat</button>
+            </router-link>          
+          </div>        
+        </div>
       </div>
-    </div>
-  </header>
-
-  <body>
-    <div class="component">
-      <router-view></router-view>
-    </div>
-  </body>
-
+    </header>
+  
+    <body>
+      <div class="component">
+        <router-view></router-view>
+      </div>
+    </body>
+  </div>
 </template>
 
 
 <style scoped>
+
+.page {
+  flex-direction: column;
+}
 header {
-  align-items: left;
-  line-height: 1.5;
-  max-height: 100vh;  
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #424242;
 }
 
 body {
-  align-items: left;
-  line-height: 1.5;
-}
-
-nav {
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
 }
 
 .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,7 +61,7 @@ nav a:first-of-type {
 button {
   margin: 10px;
   padding: 8px 16px;
-  background-color: #2196F3;
+  background-color: #166fb8;
   color: #fff;
   border: none;
   border-radius: 24px;
@@ -84,24 +72,13 @@ button {
   width: auto;
   margin: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: center;
   align-items: center;
 }
 
 @media (min-width: 1024px) {
   header {
-    display: block;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
   }
 }
 </style>

@@ -41,7 +41,7 @@ export default {
   width: auto;
   margin: 0 auto;
   background-color: #f9f9f9;
-  border: 1px solid #2196F3;
+  border: 1px solid #166fb8;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -57,9 +57,10 @@ export default {
 }
 
 .chat-message {
+  width: 80%;
   margin: 5px 0;
   padding: 8px;
-  background-color: #2196F3;
+  background-color: #166fb8;
   color: #fff;
   border-radius: 16px;
 }
@@ -85,7 +86,7 @@ input[type="text"] {
 button {
   margin-left: 10px;
   padding: 8px 16px;
-  background-color: #2196F3;
+  background-color: #166fb8;
   color: #fff;
   border: none;
   border-radius: 24px;

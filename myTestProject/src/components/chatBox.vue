@@ -6,7 +6,14 @@
       </div>
     </div>
     <div class="chat-input">
-      <input v-model="newMessage" @keyup.enter="sendMessage" placeholder="Digite sua mensagem..." />
+      <input
+        type="text"
+        v-model="newMessage"
+        :style="inputStyle"
+        @focus="isFocused = true"
+        @blur="isFocused = false"
+        @keyup.enter="sendMessage" placeholder="Digite sua mensagem..."
+      />
       <button @click="sendMessage">Send</button>
       <button @click="clearMessage">Delete</button>
     </div>
@@ -32,7 +39,14 @@ export default {
       this.messages.pop(this.newMessage);
       this.newMessage = '';
     }
-  }  
+  },
+  computed: {
+    inputStyle() {
+      return {
+        border: this.inputFocus ? "2px solid #b0062b" : "1px solid #ccc"
+      };
+    }
+  },
 };
 </script>
 
@@ -41,7 +55,7 @@ export default {
   width: auto;
   margin: 0 auto;
   background-color: #f9f9f9;
-  border: 1px solid #166fb8;
+  border: 1px solid #b0062b;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -60,7 +74,7 @@ export default {
   width: 80%;
   margin: 5px 0;
   padding: 8px;
-  background-color: #166fb8;
+  background-color: #b0062b;;
   color: #fff;
   border-radius: 16px;
 }
@@ -70,23 +84,22 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #fff;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  color: rgb(102, 102, 102);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 input[type="text"] {
-  flex-grow: 1;
   padding: 8px;
-  border: 1px solid #000000;
-  border-radius: 16px;
-  outline: none;
+  border-radius: 8px;
+  border-color: #b0062b;
+  border: 1px solid #b0062b;
 }
 
 button {
   margin-left: 10px;
   padding: 8px 16px;
-  background-color: #166fb8;
+  background-color: #b0062b;;
   color: #fff;
   border: none;
   border-radius: 24px;
